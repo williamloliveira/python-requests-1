@@ -1,0 +1,29 @@
+<header>
+    <h1>Simples Aplicacao em Flask</h1>
+    <h2>Windao e Windinho</h2>
+</header>
+<main>
+    <h3>Digite seus dados para dar risada</h3>
+    <section>
+        {{ contexto.mensagem }}
+    </section>
+    <form method="POST" action="/">
+        <div>
+            <label for="nome">Nome</label>
+            <input id="nome" type="text" name="nome" value="{{ contexto.nome }}">
+        </div>
+        <div>
+            <label for="idade">Idade</label>
+            <input id="idade" type="number" name="idade">
+        </div>
+        <div>
+            <label for="linux">Linux</label>
+            <input type="radio" name="so" value="linux">
+        </div>
+        <div>
+            <label for="windows">Windows</label>
+            <input type="radio" name="so" value="windows">
+        </div>
+        <button type="submit">Enviar</button>
+    </form>
+</main>
