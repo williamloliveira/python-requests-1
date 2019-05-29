@@ -42,6 +42,13 @@ def post_user():
     if not form:
         return 'Mensagem invalida!'
 
+    users = db.users.find().sort('_id', pymongo.ASCENDING)  
+    for u in users:
+            if u['email'] == form['email']:
+                return flask.jsonify({
+                    'mensagem': 'usuario já existe'
+                }), 403
+
     nome = form ['nome']
     email = form['email']
     senha = form['senha']
